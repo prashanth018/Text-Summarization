@@ -5,19 +5,20 @@
 2) Use subreddits.
 3) Scraping
 
-#### Article platforms: 
-https://www.reddit.com/r/longform/comments/9etnuo/question_whats_your_top_5_websites_for_longform/ <br>
-https://www.reddit.com/r/indepthstories/comments/1lnnyn/i_made_this_list_of_my_favorite_feature_articles/ <br>
+#### PRAW Documentation:
+https://praw.readthedocs.io/en/latest/getting_started/quick_start.html <br>
 
 #### The guardian documentation & python api:
 https://open-platform.theguardian.com/documentation/ <br>
 https://github.com/prabhath6/theguardian-api-python <br>
 
-
 #### Utilities:
 https://towardsdatascience.com/scraping-news-and-articles-from-public-apis-with-python-be84521d85b9 (article describes how to access apis from different websites). <br>
 https://github.com/je-suis-tm/web-scraping (Tool which scrapes articles from: Al Jazeera AJ,Bloomberg,British Broadcasting Corporation BBC,CFTC,Cable News Network CNN,Calendar Labs,Certificate in Quantitative Finance CQF,Chicago Mercantile Exchange CME Futures,Chicago Mercantile Exchange CME Options,Financial Times FT,Fortune,London Metal Exchange LME,Shanghai Future Exchange SHFE, Springer Nature, The Economist, Thompson Reuters, US Treasury, Wall Street Journal WSJ). <br>
 
+#### Article platforms: 
+https://www.reddit.com/r/longform/comments/9etnuo/question_whats_your_top_5_websites_for_longform/ <br>
+https://www.reddit.com/r/indepthstories/comments/1lnnyn/i_made_this_list_of_my_favorite_feature_articles/ <br>
 
 #### Few handpicked subreddits:
 https://www.reddit.com/r/longform/ <br>
