@@ -15,9 +15,8 @@ https://github.com/prabhath6/theguardian-api-python <br>
 
 
 #### Utilities:
-https://towardsdatascience.com/scraping-news-and-articles-from-public-apis-with-python-be84521d85b9 (article describes how to access apis from different websites)
-
-https://github.com/je-suis-tm/web-scraping (Tool which scrapes articles from: Al Jazeera AJ,Bloomberg,British Broadcasting Corporation BBC,CFTC,Cable News Network CNN,Calendar Labs,Certificate in Quantitative Finance CQF,Chicago Mercantile Exchange CME Futures,Chicago Mercantile Exchange CME Options,Financial Times FT,Fortune,London Metal Exchange LME,Shanghai Future Exchange SHFE, Springer Nature, The Economist, Thompson Reuters, US Treasury, Wall Street Journal WSJ)
+https://towardsdatascience.com/scraping-news-and-articles-from-public-apis-with-python-be84521d85b9 (article describes how to access apis from different websites).
+https://github.com/je-suis-tm/web-scraping (Tool which scrapes articles from: Al Jazeera AJ,Bloomberg,British Broadcasting Corporation BBC,CFTC,Cable News Network CNN,Calendar Labs,Certificate in Quantitative Finance CQF,Chicago Mercantile Exchange CME Futures,Chicago Mercantile Exchange CME Options,Financial Times FT,Fortune,London Metal Exchange LME,Shanghai Future Exchange SHFE, Springer Nature, The Economist, Thompson Reuters, US Treasury, Wall Street Journal WSJ).
 
 
 #### Few handpicked subreddits:
