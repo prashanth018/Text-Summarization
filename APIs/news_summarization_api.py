@@ -10,6 +10,7 @@ import connexion
 import numpy as np
 import pandas as pd
 import nltk
+import re
 from newspaper import Article
 from newspaper.article import ArticleDownloadState, ArticleException
 from nltk.tokenize import sent_tokenize
@@ -96,7 +97,7 @@ class ExtractiveTextSummarizer:
         return sim_mat
 
     # convert similarity matrix into a graph using page rank algorithm.
-    # Nodes of the graph will be sentences and endges will be similarity scores
+    # Nodes of the graph will be sentences and edges will be similarity scores
     # extract the top N scored sentences
     def page_rank(self, sim_mat, sentences, summary_length):
         nx_graph = nx.from_numpy_array(sim_mat)
@@ -125,14 +126,50 @@ class ExtractiveTextSummarizer:
 
         return summary
 
+    def casefolding(self, sentence):
+        return sentence.lower()
 
-# Implement our predict function
-# def summarize(article, title, summary_length):
-#     summarizer = ExtractiveTextSummarizer()
-#     summary = summarizer.create_summary(article, summary_length)
-#     # print(title)
-#     # print(summary)
-#     return {"title": title, "summary": summary}
+    def cleaning(self, sentence):
+        return re.sub(r'[^a-z]', ' ', re.sub("’", '', sentence))
+
+    def tokenization(self, sentence):
+        return sentence.split()
+
+    def sentence_split(self, paragraph):
+        return nltk.sent_tokenize(paragraph)
+
+    def word_freq(self, data):
+        w = []
+        for sentence in data:
+            for words in sentence:
+                w.append(words)
+        bag = list(set(w))
+        res = {}
+        for word in bag:
+            res[word] = w.count(word)
+        return res
+
+    def summary_ranking(self, news_text, n):
+        sentence_list = self.sentence_split(str(news_text))
+        data = []
+        for sentence in sentence_list:
+            data.append(self.tokenization(self.cleaning(self.casefolding(sentence))))
+        data = (list(filter(None, data)))
+        wordfreq = self.word_freq(data)
+        ranking = []
+        for words in data:
+            temp = 0
+            for word in words:
+                temp += wordfreq[word]
+            ranking.append(temp)
+
+        result = ''
+        sort_list = np.argsort(ranking)[::-1][:n]
+        # print(sort_list)
+        # l = []
+        for i in range(n):
+            result += '{} '.format(sentence_list[sort_list[i]])
+        return result
 
 
 def summarize(url, summary_length):
@@ -161,11 +198,35 @@ def summarize(url, summary_length):
     return {"title": article_huff.title, "summary": summary}
 
 
+def wf_summarize(url, summary_length):
+    """
+        :param summary_length: length of the summary in percentage
+        :param url: url to scrape from the web
+        :return: call the summarize function
+    """
+    article_huff = Article(url)
+    slept = 0
+    article_huff.download()
+    while article_huff.download_state == ArticleDownloadState.NOT_STARTED:
+        # Raise exception if article download state does not change after 12 seconds
+        if slept > 13:
+            raise ArticleException('Download never started')
+    sleep(1)
+    slept += 1
+    n = int(summary_length)
+
+    article_huff.parse()
+    news_text = article_huff.text
+    summarizer = ExtractiveTextSummarizer()
+    summary = summarizer.summary_ranking(news_text, n)
+    return {"title": article_huff.title, "summary": summary}
+
+
 # Read the API definition for our service from the yaml file
 app.add_api("news_summarization_api.yaml")
-
-# Start the app
+#
+# # Start the app
 if __name__ == "__main__":
     app.run()
 
-# summarize("https://www.huffingtonpost.com/entry/hugh-grant-marries_us_5b09212ce4b0568a880b9a8c", 50)
+# summarize("https://www.huffingtonpost.com/entry/hugh-grant-marries_us_5b09212ce4b0568a880b9a8c", 5)

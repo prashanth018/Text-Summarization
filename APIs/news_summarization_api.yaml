@@ -39,3 +39,27 @@ paths:
           description: Summarization performed successfully
         '500':
           description: Unable to perform the summarization
+  /wfsummarize:
+    post:
+      summary: Entrypoint to the extractive summarization function
+      operationId: news_summarization_api.wf_summarize
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - in: formData
+          name: url
+          required: true
+          description: The news article text to be summarized
+          type: string
+        - in: formData
+          name: summary_length
+          required: true
+          description: The length of the summary
+          type: number
+      responses:
+        '200':
+          description: Summarization performed successfully
+        '500':
+          description: Unable to perform the summarization
