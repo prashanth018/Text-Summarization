@@ -7,17 +7,21 @@ Navigate to:
 """
 from time import sleep
 import connexion
-import numpy as np
 import pandas as pd
 import nltk
+import os
+import glob
 import re
 from newspaper import Article
 from newspaper.article import ArticleDownloadState, ArticleException
 from nltk.tokenize import sent_tokenize
 import networkx as nx
 from sklearn.metrics.pairwise import cosine_similarity
-
+from fuzzywuzzy import fuzz
 from nltk.corpus import stopwords
+import numpy as np
+from rouge_metric import PyRouge
+import matplotlib.pyplot as plt
 
 nltk.download('punkt')  # one time execution
 nltk.download('stopwords')  # one time execution
@@ -27,6 +31,10 @@ stop_words = stopwords.words('english')
 # Instantiate our Flask app object
 app = connexion.FlaskApp(__name__, port=8080, specification_dir='')
 application = app.app
+
+recall_scores_list = []
+f_scores_list = []
+fuzz_ratio = []
 
 
 # Implement a simple health check function (GET)
@@ -193,8 +201,6 @@ def summarize(url, summary_length):
     article_huff.parse()
     summarizer = ExtractiveTextSummarizer()
     summary = summarizer.create_summary(article_huff.text, summary_length)
-    # print(article_huff.title)
-    # print(summary)
     return {"title": article_huff.title, "summary": summary}
 
 
@@ -222,11 +228,83 @@ def wf_summarize(url, summary_length):
     return {"title": article_huff.title, "summary": summary}
 
 
+def evaluation_metrics(summaries, hypotheses_list):
+    rouge = PyRouge(rouge_n=(1, 2, 4), rouge_l=True, rouge_w=True,
+                    rouge_w_weight=1.2, rouge_s=True, rouge_su=True, skip_gap=4)
+    actual_summary_list = []
+    references_list = []
+    folder_path = "../BBCNewsSummary/Summaries/business"
+    for filename in glob.glob(os.path.join(folder_path, '*.txt')):
+        with open(filename, 'r') as f:
+            text = f.read()
+            references = []
+            actual_summary_list.append(text)
+            # Pre-process and tokenize the summaries as you like
+            references.append(text.split())
+            references_list.append(references)
+
+    for i in range(len(summaries)):
+        fuzz_ratio.append(fuzz.ratio(summaries[i], actual_summary_list[i]))
+        scores = rouge.evaluate_tokenized(hypotheses_list[i], references_list[i])
+        recall_scores_list.append(scores['rouge-1']['r'] * 100)
+        f_scores_list.append(scores['rouge-1']['f'] * 100)
+    # return fuzz_ratio, recall_scores_list, f_scores_list
+
+
+def fuzzy_visualize():
+    plt.hist(fuzz_ratio, bins=len(fuzz_ratio))
+    plt.xlabel('Levenshtein distance score')
+    plt.ylabel('Data')
+    plt.show()
+
+
+def recall_visualize():
+    plt.hist(recall_scores_list, density=True, bins=len(recall_scores_list))
+    plt.ylabel('Rouge recall score')
+    plt.xlabel('Data')
+    plt.show()
+
+
+def fscore_visualize():
+    plt.hist(f_scores_list, density=True, bins=len(f_scores_list))
+    plt.ylabel('F-Score')
+    plt.xlabel('Data')
+    plt.show()
+
+
+def generate_summary(summary_length):
+    summary_list = []
+    hypotheses_list = []
+
+    j = 0
+    folder_path = "../BBCNewsSummary/NewsArticles/business"
+    for filename in glob.glob(os.path.join(folder_path, '*.txt')):
+        with open(filename, 'r') as f:
+            j = j + 1
+            text = f.read()
+            summarizer = ExtractiveTextSummarizer()
+            # change method names to call different algorithms here
+            summary = summarizer.summary_ranking(text, summary_length)
+            summary_list.append(summary)
+            # Pre-process and tokenize the summaries as you like
+            hypotheses = [text.split()]
+            hypotheses_list.append(hypotheses)
+            if j == summary_length:
+                break
+    evaluation_metrics(summary_list, hypotheses_list)
+
+
 # Read the API definition for our service from the yaml file
 app.add_api("news_summarization_api.yaml")
-#
+
 # # Start the app
 if __name__ == "__main__":
     app.run()
 
+
+# VISUALIZATION FUNCTIONS
+# generate_summary(8)
+# fuzzy_visualize()
+# fscore_visualize()
+# recall_visualize()
 # summarize("https://www.huffingtonpost.com/entry/hugh-grant-marries_us_5b09212ce4b0568a880b9a8c", 5)
