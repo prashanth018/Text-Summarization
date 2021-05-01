@@ -1,0 +1,209 @@
+Traceback (most recent call last):
+  File "/home/duvvuri.s/anaconda3/bin/jupyter", line 7, in <module>
+    from jupyter_core.command import main
+ModuleNotFoundError: No module named 'jupyter_core'
+Traceback (most recent call last):
+  File "/home/duvvuri.s/anaconda3/bin/jupyter", line 7, in <module>
+    from jupyter_core.command import main
+ModuleNotFoundError: No module named 'jupyter_core'
+Traceback (most recent call last):
+  File "/home/duvvuri.s/anaconda3/bin/jupyter", line 7, in <module>
+    from jupyter_core.command import main
+ModuleNotFoundError: No module named 'jupyter_core'
+Traceback (most recent call last):
+  File "/home/duvvuri.s/anaconda3/bin/jupyter-notebook", line 7, in <module>
+    from notebook.notebookapp import main
+ModuleNotFoundError: No module named 'notebook'
+Traceback (most recent call last):
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/bin/jupyter-notebook", line 7, in <module>
+    from notebook.notebookapp import main
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/notebookapp.py", line 81, in <module>
+    from .services.kernels.kernelmanager import MappingKernelManager, AsyncMappingKernelManager
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/services/kernels/kernelmanager.py", line 18, in <module>
+    from jupyter_client.session import Session
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/__init__.py", line 6, in <module>
+    from .asynchronous import AsyncKernelClient  # noqa
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/asynchronous/__init__.py", line 1, in <module>
+    from .client import AsyncKernelClient  # noqa
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/asynchronous/client.py", line 6, in <module>
+    from jupyter_client.channels import HBChannel
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/channels.py", line 47
+    time_to_dead: float = 1.0
+                ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/bin/jupyter-notebook", line 7, in <module>
+    from notebook.notebookapp import main
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/notebookapp.py", line 81, in <module>
+    from .services.kernels.kernelmanager import MappingKernelManager, AsyncMappingKernelManager
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/services/kernels/kernelmanager.py", line 18, in <module>
+    from jupyter_client.session import Session
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/__init__.py", line 6, in <module>
+    from .asynchronous import AsyncKernelClient  # noqa
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/asynchronous/__init__.py", line 1, in <module>
+    from .client import AsyncKernelClient  # noqa
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/asynchronous/client.py", line 6, in <module>
+    from jupyter_client.channels import HBChannel
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_client/channels.py", line 47
+    time_to_dead: float = 1.0
+                ^
+SyntaxError: invalid syntax
+[I 00:45:56.822 NotebookApp] JupyterLab extension loaded from /home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyterlab
+[I 00:45:56.822 NotebookApp] JupyterLab application directory is /home/duvvuri.s/anaconda3/envs/tensorflow/share/jupyter/lab
+[I 00:45:56.827 NotebookApp] Serving notebooks from local directory: /home/duvvuri.s/extractive-document-summarization/preprocessing
+[I 00:45:56.827 NotebookApp] Jupyter Notebook 6.2.0 is running at:
+[I 00:45:56.827 NotebookApp] http://localhost:8889/?token=bd68df781994e6f9c2945e2c4e06c87949c33867e26b0f30
+[I 00:45:56.827 NotebookApp]  or http://127.0.0.1:8889/?token=bd68df781994e6f9c2945e2c4e06c87949c33867e26b0f30
+[I 00:45:56.827 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 00:45:56.838 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/duvvuri.s/.local/share/jupyter/runtime/nbserver-265112-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/?token=bd68df781994e6f9c2945e2c4e06c87949c33867e26b0f30
+     or http://127.0.0.1:8889/?token=bd68df781994e6f9c2945e2c4e06c87949c33867e26b0f30
+[W 00:48:36.301 NotebookApp] 404 GET /notebooks/preprocessing/Demo.ipynb (127.0.0.1): No such file or directory: preprocessing/Demo.ipynb
+[W 00:48:36.403 NotebookApp] 404 GET /notebooks/preprocessing/Demo.ipynb (127.0.0.1) 106.720000ms referer=None
+[I 00:48:44.173 NotebookApp] 302 GET /notebooks/ (127.0.0.1) 2.900000ms
+[W 00:49:15.771 NotebookApp] Notebook Demo.ipynb is not trusted
+[I 00:49:16.908 NotebookApp] Kernel started: cc736520-3a4d-4417-8c7f-e62495e99868, name: python3
+2021-04-20 00:50:39.193638: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2021-04-20 00:50:39.208306: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2200000000 Hz
+2021-04-20 00:50:39.212178: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560d3e5d6630 executing computations on platform Host. Devices:
+2021-04-20 00:50:39.212215: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2021-04-20 00:50:39.318522: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+[I 00:51:17.077 NotebookApp] Saving file at /Demo.ipynb
+[I 00:57:17.116 NotebookApp] Saving file at /Demo.ipynb
+[I 00:59:17.152 NotebookApp] Saving file at /Demo.ipynb
+[I 01:01:17.062 NotebookApp] Saving file at /Demo.ipynb
+[I 01:05:17.066 NotebookApp] Saving file at /Demo.ipynb
+[I 01:13:17.061 NotebookApp] Saving file at /Demo.ipynb
+[I 01:15:17.078 NotebookApp] Saving file at /Demo.ipynb
+[I 01:17:17.139 NotebookApp] Saving file at /Demo.ipynb
+[I 01:19:17.173 NotebookApp] Saving file at /Demo.ipynb
+[I 01:20:59.897 NotebookApp] Saving file at /Demo.ipynb
+[I 01:21:02.589 NotebookApp] Kernel interrupted: cc736520-3a4d-4417-8c7f-e62495e99868
+[I 01:21:17.081 NotebookApp] Saving file at /Demo.ipynb
+[I 01:23:17.083 NotebookApp] Saving file at /Demo.ipynb
+[I 01:27:17.103 NotebookApp] Saving file at /Demo.ipynb
+[I 01:53:17.155 NotebookApp] Saving file at /Demo.ipynb
+[I 01:54:23.444 NotebookApp] Saving file at /Demo.ipynb
+[I 01:55:16.993 NotebookApp] Saving file at /Demo.ipynb
+[I 01:57:16.925 NotebookApp] Saving file at /Demo.ipynb
+[I 01:59:16.914 NotebookApp] Saving file at /Demo.ipynb
+[I 02:03:16.931 NotebookApp] Saving file at /Demo.ipynb
+[I 02:05:16.908 NotebookApp] Saving file at /Demo.ipynb
+[I 02:07:16.877 NotebookApp] Saving file at /Demo.ipynb
+[I 02:07:19.551 NotebookApp] Saving file at /Demo.ipynb
+[I 02:09:05.495 NotebookApp] Saving file at /Demo.ipynb
+[I 02:10:36.165 NotebookApp] Saving file at /Demo.ipynb
+[I 02:10:44.247 NotebookApp] Saving file at /Demo.ipynb
+[I 02:11:16.932 NotebookApp] Saving file at /Demo.ipynb
+[I 02:11:43.021 NotebookApp] Saving file at /Demo.ipynb
+[I 02:13:16.953 NotebookApp] Saving file at /Demo.ipynb
+[I 02:13:33.301 NotebookApp] Saving file at /Demo.ipynb
+[I 02:15:16.914 NotebookApp] Saving file at /Demo.ipynb
+[I 02:15:24.052 NotebookApp] Saving file at /Demo.ipynb
+[I 02:15:30.782 NotebookApp] Saving file at /Demo.ipynb
+[I 02:17:16.976 NotebookApp] Saving file at /Demo.ipynb
+[I 02:19:16.900 NotebookApp] Saving file at /Demo.ipynb
+[I 02:21:16.908 NotebookApp] Saving file at /Demo.ipynb
+[I 02:25:16.992 NotebookApp] Saving file at /Demo.ipynb
+[I 02:27:17.904 NotebookApp] Saving file at /Demo.ipynb
+[I 02:34:22.862 NotebookApp] Saving file at /Demo.ipynb
+[I 02:35:17.892 NotebookApp] Saving file at /Demo.ipynb
+[I 02:43:16.860 NotebookApp] Saving file at /Demo.ipynb
+[W 03:23:19.706 NotebookApp] WebSocket ping timeout after 119901 ms.
+[I 03:23:24.714 NotebookApp] Starting buffering for cc736520-3a4d-4417-8c7f-e62495e99868:10fbbbd9c7f14b78b361eab2029e9a8c
+[I 03:41:07.207 NotebookApp] Restoring connection for cc736520-3a4d-4417-8c7f-e62495e99868:10fbbbd9c7f14b78b361eab2029e9a8c
+[I 03:43:17.901 NotebookApp] Saving file at /Demo.ipynb
+[I 03:53:16.876 NotebookApp] Saving file at /Demo.ipynb
+[I 03:53:27.699 NotebookApp] Saving file at /Demo.ipynb
+[I 03:54:17.907 NotebookApp] Saving file at /Demo.ipynb
+[I 03:55:16.993 NotebookApp] Saving file at /Demo.ipynb
+[I 03:55:46.104 NotebookApp] Saving file at /Demo.ipynb
+[I 03:57:16.992 NotebookApp] Saving file at /Demo.ipynb
+[I 03:58:46.292 NotebookApp] Saving file at /Demo.ipynb
+[I 03:59:16.920 NotebookApp] Saving file at /Demo.ipynb
+[I 04:01:16.865 NotebookApp] Saving file at /Demo.ipynb
+[I 04:03:16.924 NotebookApp] Saving file at /Demo.ipynb
+[I 04:03:51.790 NotebookApp] Saving file at /Demo.ipynb
+[I 04:05:16.853 NotebookApp] Saving file at /Demo.ipynb
+[I 04:29:16.870 NotebookApp] Saving file at /Demo.ipynb
+[I 04:31:16.856 NotebookApp] Saving file at /Demo.ipynb
+[I 04:33:16.858 NotebookApp] Saving file at /Demo.ipynb
+[I 04:35:16.864 NotebookApp] Saving file at /Demo.ipynb
+[I 04:37:16.993 NotebookApp] Saving file at /Demo.ipynb
+[I 04:39:16.871 NotebookApp] Saving file at /Demo.ipynb
+[I 04:43:16.883 NotebookApp] Saving file at /Demo.ipynb
+[I 04:47:17.849 NotebookApp] Saving file at /Demo.ipynb
+[I 04:51:16.869 NotebookApp] Saving file at /Demo.ipynb
+[I 04:53:16.880 NotebookApp] Saving file at /Demo.ipynb
+[I 04:55:17.881 NotebookApp] Saving file at /Demo.ipynb
+[I 04:56:43.611 NotebookApp] Saving file at /Demo.ipynb
+[I 04:57:17.041 NotebookApp] Saving file at /Demo.ipynb
+[I 04:58:05.782 NotebookApp] Saving file at /Demo.ipynb
+[I 05:01:16.880 NotebookApp] Saving file at /Demo.ipynb
+[I 05:03:16.879 NotebookApp] Saving file at /Demo.ipynb
+[I 05:05:16.882 NotebookApp] Saving file at /Demo.ipynb
+[I 05:07:16.910 NotebookApp] Saving file at /Demo.ipynb
+[I 05:09:16.883 NotebookApp] Saving file at /Demo.ipynb
+[I 05:11:16.932 NotebookApp] Saving file at /Demo.ipynb
+[I 05:13:16.870 NotebookApp] Saving file at /Demo.ipynb
+[I 05:23:16.885 NotebookApp] Saving file at /Demo.ipynb
+[I 05:25:16.894 NotebookApp] Saving file at /Demo.ipynb
+[I 05:27:17.846 NotebookApp] Saving file at /Demo.ipynb
+[I 05:31:16.870 NotebookApp] Saving file at /Demo.ipynb
+[I 05:33:16.866 NotebookApp] Saving file at /Demo.ipynb
+[I 05:35:16.870 NotebookApp] Saving file at /Demo.ipynb
+[I 05:36:42.272 NotebookApp] Saving file at /Demo.ipynb
+[I 05:37:16.887 NotebookApp] Saving file at /Demo.ipynb
+[I 05:39:17.846 NotebookApp] Saving file at /Demo.ipynb
+[I 05:41:16.888 NotebookApp] Saving file at /Demo.ipynb
+[I 05:43:16.900 NotebookApp] Saving file at /Demo.ipynb
+[I 05:45:16.876 NotebookApp] Saving file at /Demo.ipynb
+[I 05:45:49.963 NotebookApp] Saving file at /Demo.ipynb
+[I 05:47:16.872 NotebookApp] Saving file at /Demo.ipynb
+[I 05:49:16.873 NotebookApp] Saving file at /Demo.ipynb
+[I 05:51:16.871 NotebookApp] Saving file at /Demo.ipynb
+[I 05:53:16.889 NotebookApp] Saving file at /Demo.ipynb
+[I 05:55:16.897 NotebookApp] Saving file at /Demo.ipynb
+[I 05:57:16.885 NotebookApp] Saving file at /Demo.ipynb
+[I 05:59:16.899 NotebookApp] Saving file at /Demo.ipynb
+[I 06:01:16.873 NotebookApp] Saving file at /Demo.ipynb
+[I 06:03:17.840 NotebookApp] Saving file at /Demo.ipynb
+[I 06:27:14.116 NotebookApp] Saving file at /Demo.ipynb
+[W 06:27:23.467 NotebookApp] Notebook Demo.ipynb is not trusted
+[I 06:27:37.620 NotebookApp] 302 GET /notebooks/ (127.0.0.1) 4.170000ms
+[I 06:30:10.738 NotebookApp] New terminal with automatic name: 1
+TermSocket.open: 1
+TermSocket.open: Opened 1
+[I 06:36:37.718 NotebookApp] Saving file at /api.yaml
+[I 06:37:28.590 NotebookApp] Saving file at /api.py
+[I 06:46:39.093 NotebookApp] Saving file at /api.py
+Websocket closed
+[I 06:49:25.946 NotebookApp] Saving file at /Demo.ipynb
+[I 06:50:00.454 NotebookApp] Starting buffering for cc736520-3a4d-4417-8c7f-e62495e99868:10fbbbd9c7f14b78b361eab2029e9a8c
+[I 06:50:13.215 NotebookApp] Interrupted...
+[I 06:50:13.227 NotebookApp] Shutting down 1 kernel
+[C 15:03:33.795 NotebookApp] received signal 15, stopping
+[I 15:03:33.797 NotebookApp] Kernel shutdown: cc736520-3a4d-4417-8c7f-e62495e99868
+[I 15:03:33.806 NotebookApp] Shutting down 1 terminal
+[I 15:03:33.899 NotebookApp] KernelRestarter: restarting kernel (1/5), keep random ports
+Traceback (most recent call last):
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/bin/jupyter-notebook", line 11, in <module>
+    sys.exit(main())
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/jupyter_core/application.py", line 270, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/traitlets/config/application.py", line 664, in launch_instance
+    app.start()
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/notebookapp.py", line 2317, in start
+    self.cleanup_terminals()
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/notebookapp.py", line 2116, in cleanup_terminals
+    run_sync(terminal_manager.terminate_all())
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/utils.py", line 370, in run_sync
+    return wrapped()
+  File "/home/duvvuri.s/anaconda3/envs/tensorflow/lib/python3.5/site-packages/notebook/utils.py", line 369, in wrapped
+    return result
+UnboundLocalError: local variable 'result' referenced before assignment
+[IPKernelApp] WARNING | Parent appears to have exited, shutting down.
