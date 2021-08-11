@@ -1,61 +1,29 @@
-## Text-Summarization
+We have traversed through 4 different algorithms in order to compare and analyse the summaries created by each of them. The four algorithms explored were:
+Text Rank 
+Word frequency
+Seq2Seq
+CNN
 
-#### Ways to get data from different websites:
-1) Check for API
-2) Use subreddits.
-3) Scraping
 
-#### PRAW Documentation:
-https://praw.readthedocs.io/en/latest/getting_started/quick_start.html <br>
+We created a UI for our service. 
+Swagger
+First, we created a Swagger API interface. This can be found in the following files:
+news_api.py
+news_api.yaml
 
-#### The guardian documentation & python api:
-https://open-platform.theguardian.com/documentation/ <br>
-https://github.com/prabhath6/theguardian-api-python <br>
+In order to run the Swagger API, please run the following commands from the APIs folder in your terminal: 
+python news_api.py
 
-#### Utilities:
-https://towardsdatascience.com/scraping-news-and-articles-from-public-apis-with-python-be84521d85b9 (article describes how to access apis from different websites). <br>
-https://github.com/je-suis-tm/web-scraping (Tool which scrapes articles from: Al Jazeera AJ,Bloomberg,British Broadcasting Corporation BBC,CFTC,Cable News Network CNN,Calendar Labs,Certificate in Quantitative Finance CQF,Chicago Mercantile Exchange CME Futures,Chicago Mercantile Exchange CME Options,Financial Times FT,Fortune,London Metal Exchange LME,Shanghai Future Exchange SHFE, Springer Nature, The Economist, Thompson Reuters, US Treasury, Wall Street Journal WSJ). <br>
-https://pushshift.io/ (Reddit Stats) <br>
-https://github.com/codelucas/newspaper (A very good python library to scarpe the text given an article, gfg: https://www.geeksforgeeks.org/newspaper-article-scraping-curation-python/) <br>
+Then, in your browser, navigate to:
+http://localhost:8080/ui/
 
-#### Article platforms: 
-https://www.reddit.com/r/longform/comments/9etnuo/question_whats_your_top_5_websites_for_longform/ <br>
-https://www.reddit.com/r/indepthstories/comments/1lnnyn/i_made_this_list_of_my_favorite_feature_articles/ <br>
 
-#### Few handpicked subreddits:
-https://www.reddit.com/r/longform/ <br>
-https://www.reddit.com/r/indepthstories/ <br>
+/summarize takes two parameters: 
+Article URL: Only Huffington Post news article URLs 
+Summary_length: Integer value within range 0-100
+The article url is used to scrape the article text behind the scenes and the summary length value is used as a percentage. For instance, when summary_length is 10 then only the top 10% ranked sentences of the total sentences present in the article are returned as a summary, along with the title of the article.
 
-https://www.reddit.com/r/ZenHabits/ <br>
-https://www.reddit.com/r/DecidingToBeBetter/ <br>
-https://www.reddit.com/r/selfimprovement/ <br>
-https://www.reddit.com/r/howtonotgiveafuck/ <br>
-https://www.reddit.com/r/getdisciplined/ <br>
-https://www.reddit.com/r/productivity/ <br>
-
-https://www.reddit.com/r/psychology/ <br>
-https://www.reddit.com/r/Economics/ <br>
-https://www.reddit.com/r/literature/ <br>
-https://www.reddit.com/r/history/ <br>
-https://www.reddit.com/r/AskHistorians/ <br>
-https://www.reddit.com/r/askscience/ <br>
-https://www.reddit.com/r/philosophy/ <br>
-
-https://www.reddit.com/r/Foodforthought/ -- Nice <br>
-https://www.reddit.com/r/TrueReddit/ -- Nice <br>
-https://www.reddit.com/r/DepthHub/ -- Nice <br>
-https://www.reddit.com/r/explainlikeimfive/ <br>
-
-https://www.reddit.com/r/Anxiety/ <br>
-https://www.reddit.com/r/depression/ <br>
-https://www.reddit.com/r/books/ <br>
-https://www.reddit.com/r/quoteporn/ <br>
-https://www.reddit.com/r/quotes/ <br>
-
-https://www.reddit.com/r/Buddhism/ <br>
-https://www.reddit.com/r/taoism/ <br>
-https://www.reddit.com/r/YouShouldKnow/ <br>
-https://www.reddit.com/r/Futurology/ <br>
-https://www.reddit.com/r/offbeat/ <br>
-https://www.reddit.com/r/fascinating/ <br>
-https://www.reddit.com/r/LifeProTips/ <br>
+/wf_summarize takes two parameters:
+Article URL: Only Huffington Post news article URLs
+Summary_length: Integer value within total length of the article sentences
+The article url is used to scrape the article text behind the scenes and the summary length value is used as the number of sentences we want in the summary. For instance: when  summary_length is 10, then only the top 10 ranked sentences of the total sentences present in the article are returned as a summary along with the title of the article.
